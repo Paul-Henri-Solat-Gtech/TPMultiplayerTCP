@@ -17,6 +17,8 @@ void SendMsgToServer(SOCKET& mySocket, sockaddr_in& addrDestinataire)
 		return;
 	}
 	std::cout << "Envoie terminer ! " << std::endl;
+
+	SendMsgToServer(mySocket, addrDestinataire);
 }
 
 int main()
@@ -34,18 +36,11 @@ int main()
 		return 1;
 	}
 
-	// Inatialisation du serveur et parametres
-	//sockaddr_in newAddress;
-	//newAddress.sin_addr.s_addr = INADDR_ANY;
-	//newAddress.sin_port = htons(1025);
-	//newAddress.sin_family = AF_INET;
-
-	/*newSocket est le socket depuis lequel envoyer les donnees.
-	buffer est le tampon de donnees à envoyer.
-	len est la taille du tampon en octets.
-	flags permet de specifier des options pour cet envoi, généralement 0 pour aucune option particuliere.
+	/* newSocket est le socket depuis lequel envoyer les donnees.
+	msg est le tampon de donnees a envoyer.
+	strlen(msg) est la taille du tampon en octets.
 	addrDestinataire est ladresse du destinataire.
-	fromlen est la taille de la structure de ladresse du destinataire.*/
+	fromlen est la taille de la structure de ladresse du destinataire. */
 	
 	// Envoie
 	sockaddr_in addrDestinataire;
