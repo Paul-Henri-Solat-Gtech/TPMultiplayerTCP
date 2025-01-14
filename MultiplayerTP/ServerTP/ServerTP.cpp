@@ -68,6 +68,8 @@ int main()
 		/*if (nb > 0) {
 			send(newClient, data, strlen(data), 0);
 		}*/
+
+
 	}
 
 
