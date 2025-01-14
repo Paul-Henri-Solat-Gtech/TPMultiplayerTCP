@@ -65,14 +65,14 @@ int main()
 		int nb = recv(newClient, data, 1024, 0);
 		data[nb] = 0;
 		std::cout << data << std::endl;
-		if (nb > 0) {
+		/*if (nb > 0) {
 			send(newClient, data, strlen(data), 0);
-		}
+		}*/
 	}
 
 
 	closesocket(newServer);
 	WSACleanup();
-	//std::cin.get();
+
 	return 0;
 }
